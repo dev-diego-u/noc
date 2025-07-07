@@ -1,3 +1,4 @@
+import { envs } from "./config/plugins/env.plugins";
 import { ServerApp } from "./presentation/server";
 
 (() => {
@@ -5,5 +6,6 @@ import { ServerApp } from "./presentation/server";
 })();
 
 function main(): void {
-  ServerApp.start();
+  // ServerApp.start();
+  console.log(envs.PORT);
 }
