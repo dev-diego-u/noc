@@ -13,3 +13,7 @@ MAILER_EMAIL=
 MAILER_SECRET_KEY=
 PROD=false
 ```
+
+3. npm install
+
+4. npm run dev

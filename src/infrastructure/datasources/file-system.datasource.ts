@@ -1,4 +1,3 @@
-import { json } from "stream/consumers";
 import { LogDataSource } from "../../domain/datasources/log.datasources";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 import fs from "fs";
