@@ -25,12 +25,25 @@ export class LogEntity {
     this.origin = origin;
   }
 
+  //* Crea una instancia de LogEntity a partir de un string JSON.
   static fromJson(json: string): LogEntity {
+    json = json === "" ? "{}" : json;
     const { message, level, createdAt, origin } = JSON.parse(json); //toma el mensaje, el nivel y la fecha de creación del JSON
 
     // const log = new LogEntity(message, level); // Create a new instance of LogEntity
     const log = new LogEntity({ message, level, createdAt, origin }); // Create a new instance of LogEntity
     log.createdAt = new Date(createdAt); // Convert string to Date object
+    return log;
+  }
+  //* Crea una instancia de LogEntity a partir de un docuemto mongo
+  static fromObject(object: { [key: string]: any }): LogEntity {
+    const { level, message, createdAt, origin } = object;
+    const log = new LogEntity({
+      level,
+      message,
+      createdAt,
+      origin,
+    });
     return log;
   }
 }

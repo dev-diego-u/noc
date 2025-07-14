@@ -13,3 +13,10 @@ dist/
 # Coverage directory
 coverage/
 logs/
+
+#mongo 
+mongo/
+
+#postgres
+postgres/
+/src/generated/prisma

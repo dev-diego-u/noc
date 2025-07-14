@@ -38,13 +38,19 @@ export class FileSystemDataSource implements LogDataSource {
     if (newlog.level === LogSeverityLevel.high) {
       fs.appendFileSync(this.highLogsPath, `${logAsJson}`);
     }
+    console.log("log created en file");
   }
 
   //metodo privado que lee el archivo de logs y devuelve un array de LogEntity
   private getLogsFromFile = (path: string): LogEntity[] => {
-    const content = fs.readFileSync(path, "utf-8");
-    const logs = content.split("\n").map((log) => LogEntity.fromJson(log)); // Convert each line to a LogEntity
-    return logs;
+    const content = fs.readFileSync(path, "utf-8").trim();
+    // console.log(content.trim());
+    // console.log(content.split("\n"));
+    if (content === "") return [];
+    //limpiar objeto vacio
+    // console.log(content.split("\n"));
+    const logs = content.split("\n");
+    return logs.map((log) => LogEntity.fromJson(log)); // Convert each line to a LogEntity
   };
 
   // metodo que recibe un nivel de severidad y devuelve un array de LogEntity
