@@ -56,7 +56,7 @@ export class ServerApp {
     // ]);
 
     //* mandar email
-    // const emailService = new EmailService(fileSystemLogRepository);
+    const emailService = new EmailService();
 
     // emailService.sendWithFileSystemLogs([
     //   "diegoubillaramos@gmail.com",

@@ -10,7 +10,7 @@ type ErrorCallback = ((error: string) => void) | undefined;
 
 export class CheckService implements CheckServiceUseCase {
   constructor(
-    private readonly logRepository: LogRepository,
+    private readonly logRepository: LogRepository, //readonly significa que no se puede modificar
     private readonly successCallback: SuccessCallback,
     private readonly errorCallback: ErrorCallback
   ) {}

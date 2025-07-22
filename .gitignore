@@ -16,7 +16,8 @@ logs/
 
 #mongo 
 mongo/
-
 #postgres
 postgres/
-/src/generated/prisma
+/src/generated/
+mongo-test/
+postgres-test/

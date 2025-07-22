@@ -1,15 +1,15 @@
 import nodemailer from "nodemailer";
-import { envs } from "../../config/plugins/env.plugins";
+import { envs } from "../../config/plugins/envs.plugin";
 import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 
-interface SendMailOptions {
+export interface SendMailOptions {
   to: string | string[]; // 📩 Dirección del destinatario (ej: "cliente@ejemplo.com")
   subject: string; // 📝 Asunto del correo (ej: "Tu tarea fue completada")
   htmlBody: string; // 💬 Cuerpo del correo en formato HTML
   attachements?: Attachement[]; // 📎 Archivos adjuntos
 }
 
-interface Attachement {
+export interface Attachement {
   filename: string; // Nombre del archivo
   path: string; // Ruta del archivo
 }
